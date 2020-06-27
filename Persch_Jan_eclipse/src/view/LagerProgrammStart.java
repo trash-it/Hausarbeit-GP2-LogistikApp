@@ -3,9 +3,11 @@
  */
 package view;
 
+import controller.CTRL_ButtonController;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -20,12 +22,20 @@ import javafx.stage.Stage;
  *
  */
 public class LagerProgrammStart extends Application {
+	
+	static VBox box_center = VIEW_Start.getBox();
+	static Text statusText = new Text();
+	
 
 
 	
 	@Override 
 	public void start(Stage primaryStage) {
+		statusText.setText("Startmenü");
+			
+		
 			BorderPane root = new BorderPane();
+			
 			
             Label top = new Label("label top");
             top.setPadding(new Insets(25, 25, 25, 25));
@@ -61,6 +71,13 @@ public class LagerProgrammStart extends Application {
             btn_exportToFile.setPadding(new Insets(10,10,10,10));
             btn_importFromFile.setPadding(new Insets(10,10,10,10));
             
+            btn_showAll.setOnAction(e -> {String string = "showAll"; CTRL_ButtonController.actionButton(string); changeRoot(root); }); 
+            btn_add.setOnAction(e -> {String string = "add"; CTRL_ButtonController.actionButton(string); changeRoot(root); });
+            btn_change.setPadding(new Insets(10,10,10,10));
+            btn_delete.setPadding(new Insets(10,10,10,10));
+            btn_exportToFile.setPadding(new Insets(10,10,10,10));
+            btn_importFromFile.setPadding(new Insets(10,10,10,10));
+            
             VBox box_left = new VBox();
             box_left.setAlignment(Pos.CENTER);
             box_left.setPrefWidth(150);
@@ -74,23 +91,40 @@ public class LagerProgrammStart extends Application {
             box_left.getChildren().addAll(btn_showAll, btn_add, btn_change, btn_delete, btn_exportToFile, btn_importFromFile);
             root.setLeft(box_left);
          
-            VBox box_center = new VBox();
-            box_center.setAlignment(Pos.TOP_LEFT);
-            Text text_center = new Text();
-            text_center.setText("Bitte die gewünschte Funktion auswählen");
-            box_center.getChildren().add(text_center);
+            
+            
+            box_center.setAlignment(Pos.BASELINE_LEFT);
+            // Text text_center = new Text();
+            // text_center.setText("Bitte die gewünschte Funktion auswählen");
+            root.setTop(statusText);
             root.setCenter(box_center);
             
             
             Scene scene = new Scene(root, 800,600);
             
-            primaryStage.setTitle("Lager Übersicht");
+            primaryStage.setTitle("Lagerprogramm Persch-Logistik");
             primaryStage.setScene(scene);
             primaryStage.show();
             
             
 	}
 	
+	
+	public static void changeCenterVBox(VBox box) {
+		box_center = box;
+
+
+	}
+	
+	public static void changeStatusText(Text text) {
+		statusText = text;
+		
+	}
+	
+	private void changeRoot(BorderPane root) {
+		root.setCenter(box_center);
+		root.setTop(statusText);
+	}
 	
 	/**
 	 * @param args
