@@ -73,10 +73,10 @@ public class LagerProgrammStart extends Application {
             
             btn_showAll.setOnAction(e -> {String string = "showAll"; CTRL_ButtonController.actionButton(string); changeRoot(root); }); 
             btn_add.setOnAction(e -> {String string = "add"; CTRL_ButtonController.actionButton(string); changeRoot(root); });
-            btn_change.setPadding(new Insets(10,10,10,10));
-            btn_delete.setPadding(new Insets(10,10,10,10));
-            btn_exportToFile.setPadding(new Insets(10,10,10,10));
-            btn_importFromFile.setPadding(new Insets(10,10,10,10));
+            btn_change.setOnAction(e -> {String string = "change"; CTRL_ButtonController.actionButton(string); changeRoot(root); });
+            btn_delete.setOnAction(e -> {String string = "delete"; CTRL_ButtonController.actionButton(string); changeRoot(root); });
+            btn_exportToFile.setOnAction(e -> {String string = "export"; CTRL_ButtonController.actionButton(string); changeRoot(root); });
+            btn_importFromFile.setOnAction(e -> {String string = "import"; CTRL_ButtonController.actionButton(string); changeRoot(root); });
             
             VBox box_left = new VBox();
             box_left.setAlignment(Pos.CENTER);
