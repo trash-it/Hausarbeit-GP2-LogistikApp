@@ -16,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.MODEL_WarenListe;
 
 /**
  * @author Jan Persch
@@ -25,13 +26,16 @@ public class LagerProgrammStart extends Application {
 	
 	static VBox box_center = VIEW_Start.getBox();
 	static Text statusText = new Text();
-	
+	static MODEL_WarenListe warenliste;
 
 
 	
 	@Override 
 	public void start(Stage primaryStage) {
 		statusText.setText("Startmenü");
+		warenliste = new MODEL_WarenListe();
+		utilities.createOneListEntry.createTestEntry();
+		utilities.initialHelper.createShowAllTable();
 			
 		
 			BorderPane root = new BorderPane();
@@ -93,11 +97,12 @@ public class LagerProgrammStart extends Application {
          
             
             
-            box_center.setAlignment(Pos.BASELINE_LEFT);
+            box_center.setAlignment(Pos.TOP_CENTER);
             // Text text_center = new Text();
             // text_center.setText("Bitte die gewünschte Funktion auswählen");
             root.setTop(statusText);
             root.setCenter(box_center);
+            
             
             
             Scene scene = new Scene(root, 800,600);
@@ -122,8 +127,19 @@ public class LagerProgrammStart extends Application {
 	}
 	
 	private void changeRoot(BorderPane root) {
+		box_center.setAlignment(Pos.CENTER_LEFT);
 		root.setCenter(box_center);
 		root.setTop(statusText);
+	}
+	
+	public static MODEL_WarenListe getWarenliste() {
+		return warenliste;
+	}
+	
+	
+	public static void addWare(String name, int anzahl, double gewicht, boolean palette) {
+		System.out.println("LagerProgrammStart addware");
+		warenliste.addWare(name, anzahl, gewicht, palette);
 	}
 	
 	/**
@@ -133,5 +149,8 @@ public class LagerProgrammStart extends Application {
 		 launch(args);
 
 	}
+
+
+
 
 }
