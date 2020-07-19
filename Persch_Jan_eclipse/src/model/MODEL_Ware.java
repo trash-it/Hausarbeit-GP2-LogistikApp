@@ -48,7 +48,18 @@ public class MODEL_Ware implements Serializable {
 
 	public void setArtikelName(String newArtikelName) {
 		name = newArtikelName;
-		
+	}
+	
+	public void setPalette(boolean value) {
+		palette = value;
+	}
+
+	public void setArtikelAnzahl(Integer newArtikelAnzahl) {
+		anzahl = newArtikelAnzahl;
+	}
+
+	public void setArtikelGewicht(double newArtikelGewicht) {
+		gewicht = newArtikelGewicht;	
 	}
 	
 

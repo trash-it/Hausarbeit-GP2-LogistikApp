@@ -14,7 +14,6 @@ public class VIEW_Add {
 		Text txt_artikel = new Text(20, 40, "Artikel:");
 		Text txt_anzahl = new Text(20, 40, "Anzahl:");
 		Text txt_gewicht = new Text(20, 40, "Gewicht:");
-
 		
 		TextField tf_artikel = new TextField();
 		TextField tf_anzahl = new TextField();

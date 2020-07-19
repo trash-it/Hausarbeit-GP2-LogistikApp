@@ -4,12 +4,18 @@
 package controller;
 
 import javafx.collections.ObservableList;
+import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellEditEvent;
 import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.CheckBoxTableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.util.Callback;
+import javafx.util.converter.BooleanStringConverter;
+import javafx.util.converter.DoubleStringConverter;
+import javafx.util.converter.IntegerStringConverter;
 import model.MODEL_Ware;
 
 
@@ -33,22 +39,41 @@ public class CTRL_TableController {
 				tc_anzahl.setCellValueFactory(new PropertyValueFactory<>("anzahl"));
 				tc_gewicht.setCellValueFactory(new PropertyValueFactory<>("gewicht"));
 				tc_palette.setCellValueFactory(new PropertyValueFactory<>("palette"));
+				
 				tbl_table.getItems().addAll(warenliste);
-				
-				
+								
 				tc_artikel.setCellFactory(TextFieldTableCell.<MODEL_Ware> forTableColumn());
+				tc_anzahl.setCellFactory(TextFieldTableCell.<MODEL_Ware, Integer> forTableColumn(new IntegerStringConverter()));
+				tc_gewicht.setCellFactory(TextFieldTableCell.<MODEL_Ware, Double> forTableColumn(new DoubleStringConverter()));	
+				tc_palette.setCellFactory(TextFieldTableCell.<MODEL_Ware, Boolean> forTableColumn(new BooleanStringConverter()));	
+				
 				
 				tc_artikel.setOnEditCommit((CellEditEvent<MODEL_Ware,String> event) -> {
 					TablePosition<MODEL_Ware,String> position = event.getTablePosition();
 					String newArtikelName = event.getNewValue();
-					
 					int rowNumber = position.getRow();
 					MODEL_Ware ware = event.getTableView().getItems().get(rowNumber);
-					
-					ware.setArtikelName(newArtikelName);	});
+					ware.setArtikelName(newArtikelName);});
+				tc_anzahl.setOnEditCommit((CellEditEvent<MODEL_Ware,Integer> event) -> {
+					TablePosition<MODEL_Ware,Integer> position = event.getTablePosition();
+					Integer newArtikelAnzahl = event.getNewValue();
+					int rowNumber = position.getRow();
+					MODEL_Ware ware = event.getTableView().getItems().get(rowNumber);
+					ware.setArtikelAnzahl(newArtikelAnzahl);});
+				tc_gewicht.setOnEditCommit((CellEditEvent<MODEL_Ware,Double> event) -> {
+					TablePosition<MODEL_Ware,Double> position = event.getTablePosition();
+					double newArtikelGewicht = event.getNewValue();
+					int rowNumber = position.getRow();
+					MODEL_Ware ware = event.getTableView().getItems().get( rowNumber);
+					ware.setArtikelGewicht(newArtikelGewicht);});
+				tc_palette.setOnEditCommit((CellEditEvent<MODEL_Ware,Boolean> event) -> {
+					TablePosition<MODEL_Ware,Boolean> position = event.getTablePosition();
+					boolean newPalette = event.getNewValue();
+					int rowNumber = position.getRow();
+					MODEL_Ware ware = event.getTableView().getItems().get(rowNumber);
+					ware.setPalette(newPalette);});
 				
-				
-		
+
 }
 	
 	public static void  createTable() {
