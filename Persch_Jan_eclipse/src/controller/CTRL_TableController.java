@@ -5,9 +5,11 @@ package controller;
 
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableColumn.CellEditEvent;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
+import javafx.scene.control.cell.TextFieldTableCell;
 import model.MODEL_Ware;
 
 
@@ -32,6 +34,20 @@ public class CTRL_TableController {
 				tc_gewicht.setCellValueFactory(new PropertyValueFactory<>("gewicht"));
 				tc_palette.setCellValueFactory(new PropertyValueFactory<>("palette"));
 				tbl_table.getItems().addAll(warenliste);
+				
+				
+				tc_artikel.setCellFactory(TextFieldTableCell.<MODEL_Ware> forTableColumn());
+				
+				tc_artikel.setOnEditCommit((CellEditEvent<MODEL_Ware,String> event) -> {
+					TablePosition<MODEL_Ware,String> position = event.getTablePosition();
+					String newArtikelName = event.getNewValue();
+					
+					int rowNumber = position.getRow();
+					MODEL_Ware ware = event.getTableView().getItems().get(rowNumber);
+					
+					ware.setArtikelName(newArtikelName);	});
+				
+				
 		
 }
 	
@@ -43,6 +59,14 @@ public class CTRL_TableController {
 	public static void clearTable() {
 	tbl_table.getItems().clear();
 }
+	
+	public static void setTableChangable() {
+		tbl_table.setEditable(true);
+	}
+	
+	public static void setTableNotChangable() {
+		tbl_table.setEditable(false);
+	}
 	
 	public static TableView<MODEL_Ware> getTable() {
 		return tbl_table;

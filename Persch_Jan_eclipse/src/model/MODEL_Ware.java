@@ -43,6 +43,13 @@ public class MODEL_Ware implements Serializable {
 	public boolean isPalette() {
 		return palette;
 	}
+
+
+
+	public void setArtikelName(String newArtikelName) {
+		name = newArtikelName;
+		
+	}
 	
 
 

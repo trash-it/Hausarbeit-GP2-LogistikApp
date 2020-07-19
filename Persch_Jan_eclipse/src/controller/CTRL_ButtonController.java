@@ -20,20 +20,25 @@ public class CTRL_ButtonController {
 	
 	public static Node actionButton(String string) {
 		
+
+		
 		switch(string) {
 		case "showAll":
 			CTRL_TableController.clearTable();
+			CTRL_TableController.setTableNotChangable();
 			 CTRL_TableController.setTableContent(LagerProgrammStart.getWarenliste());
 			 LagerProgrammStart.changeCenterVBox(VIEW_ShowAll.getBox());
 			 LagerProgrammStart.changeStatusText(VIEW_ShowAll.getText());
-			 
-			 
 			 break;
 		case "add":
 			LagerProgrammStart.changeCenterVBox(VIEW_Add.getBox());
 			LagerProgrammStart.changeStatusText(VIEW_Add.getText());
 			break;
 		case "change":
+			CTRL_TableController.clearTable();
+			CTRL_TableController.setTableChangable();
+			CTRL_TableController.setTableContent(LagerProgrammStart.getWarenliste());
+			
 			 LagerProgrammStart.changeCenterVBox(VIEW_Change.getBox());
 			 LagerProgrammStart.changeStatusText(VIEW_Change.getText());
 			 
