@@ -3,16 +3,7 @@
  */
 package controller;
 
-import javafx.scene.Node;
-
 import view.LagerProgrammStart;
-import view.VIEW_Add;
-import view.VIEW_Change;
-import view.VIEW_Delete;
-import view.VIEW_Export;
-import view.VIEW_Import;
-import view.VIEW_ShowAll;
-import model.MODEL_WarenListe; 
 
 /**
  * @author  Jan Persch

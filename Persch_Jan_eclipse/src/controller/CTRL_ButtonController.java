@@ -22,6 +22,7 @@ public class CTRL_ButtonController {
 		
 		switch(string) {
 		case "showAll":
+			CTRL_ShowAll.clearTable();
 			 CTRL_ShowAll.setTableContent(LagerProgrammStart.getWarenliste());
 			 LagerProgrammStart.changeCenterVBox(VIEW_ShowAll.getBox());
 			 LagerProgrammStart.changeStatusText(VIEW_ShowAll.getText());

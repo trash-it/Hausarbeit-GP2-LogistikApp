@@ -1,12 +1,13 @@
 package utilities;
 
+import controller.CTRL_ShowAll;
 import view.VIEW_ShowAll;
 
 public class initialHelper {
 	
 
 	public static void createShowAllTable(){
-		VIEW_ShowAll.createTable();
+		CTRL_ShowAll.createTable();
 	}
 
 }

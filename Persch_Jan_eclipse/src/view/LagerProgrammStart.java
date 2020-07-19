@@ -5,18 +5,19 @@ package view;
 
 import controller.CTRL_ButtonController;
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import model.MODEL_WarenListe;
+import model.MODEL_Ware;
+
 
 /**
  * @author Jan Persch
@@ -26,14 +27,14 @@ public class LagerProgrammStart extends Application {
 	
 	static VBox box_center = VIEW_Start.getBox();
 	static Text statusText = new Text();
-	static MODEL_WarenListe warenliste;
+	static ObservableList<MODEL_Ware> data;
 
 
 	
 	@Override 
 	public void start(Stage primaryStage) {
 		statusText.setText("Startmenü");
-		warenliste = new MODEL_WarenListe();
+		data = FXCollections.observableArrayList();
 		utilities.createOneListEntry.createTestEntry();
 		utilities.initialHelper.createShowAllTable();
 			
@@ -132,14 +133,14 @@ public class LagerProgrammStart extends Application {
 		root.setTop(statusText);
 	}
 	
-	public static MODEL_WarenListe getWarenliste() {
-		return warenliste;
+	public static ObservableList<MODEL_Ware> getWarenliste() {
+		return data;
 	}
 	
 	
 	public static void addWare(String name, int anzahl, double gewicht, boolean palette) {
 		System.out.println("LagerProgrammStart addware");
-		warenliste.addWare(name, anzahl, gewicht, palette);
+		data.add(new MODEL_Ware(name, anzahl, gewicht, palette));
 	}
 	
 	/**
