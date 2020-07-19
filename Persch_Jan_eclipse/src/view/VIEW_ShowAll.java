@@ -1,6 +1,6 @@
 package view;
 
-import controller.CTRL_ShowAll;
+import controller.CTRL_TableController;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -22,7 +22,7 @@ public class VIEW_ShowAll {
 	
 	public static VBox getBox() { 
 		VBox vbox = new VBox();
-		vbox.getChildren().add(CTRL_ShowAll.getTable());
+		vbox.getChildren().add(CTRL_TableController.getTable());
 		return vbox;
 	}
 

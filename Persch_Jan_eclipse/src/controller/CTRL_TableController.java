@@ -16,7 +16,7 @@ import model.MODEL_Ware;
  * @param <warenliste>
  *
  */
-public class CTRL_ShowAll {
+public class CTRL_TableController {
 	
 	static TableView<MODEL_Ware> tbl_table = new TableView<MODEL_Ware>();
 	static TableColumn<MODEL_Ware, String> tc_artikel = new TableColumn<MODEL_Ware, String>("Artikel");
