@@ -1,14 +1,22 @@
 package view;
 
+import java.io.File;
+
+import controller.CTRL_Export;
+import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 
 public class VIEW_Export {
 
 	public static VBox getBox() { 
 		VBox vbox = new VBox();
-		Text text = new Text(20, 40, "EXPORT");
-		vbox.getChildren().add(text);
+		Button btn_Export = new Button("Bestand exportieren");
+		
+		btn_Export.setOnAction( e -> {CTRL_Export.createFile(); CTRL_Export.exportFile();});
+		
+		vbox.getChildren().add(btn_Export);
 		return vbox;
 	}
 

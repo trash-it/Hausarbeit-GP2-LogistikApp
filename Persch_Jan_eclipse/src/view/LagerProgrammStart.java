@@ -28,6 +28,8 @@ public class LagerProgrammStart extends Application {
 	static VBox box_center = VIEW_Start.getBox();
 	static Text statusText = new Text();
 	static ObservableList<MODEL_Ware> data;
+	private static Stage pStage;
+	
 
 
 	
@@ -111,6 +113,8 @@ public class LagerProgrammStart extends Application {
             primaryStage.setTitle("Lagerprogramm Persch-Logistik");
             primaryStage.setScene(scene);
             primaryStage.show();
+            pStage = primaryStage;
+            
             
             
 	}
@@ -143,6 +147,9 @@ public class LagerProgrammStart extends Application {
 		data.add(new MODEL_Ware(name, anzahl, gewicht, palette));
 	}
 	
+	public static Stage getPrimaryStage() {
+		return pStage;
+	}
 	/**
 	 * @param args
 	 */
