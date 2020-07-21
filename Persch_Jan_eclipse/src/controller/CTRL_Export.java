@@ -19,22 +19,22 @@ public class CTRL_Export {
 	
 	public static void createFile() {
 		StringBuilder tempText = new StringBuilder();
+	//	tempText.append("StartOfFile" + "\n");
 		
 		for(MODEL_Ware artikel : Waren) {
-			tempText.append(artikel.getName() + "\n" + String.valueOf(artikel.getAnzahl()) + "\n" + Double.toString(artikel.getGewicht()) + "\n" + artikel.isPalette() + "\n");
+			tempText.append(artikel.getName() + "\n" + String.valueOf(artikel.getAnzahl()) + "\n" + Double.toString(artikel.getGewicht()) + "\n" + artikel.isPalette());
 			tempText.append("\n");
 		}
+	//	tempText.append("EndOfFile");
 		finalText = tempText.toString();
 	}
 	
 	public static void exportFile() {
         FileChooser fileChooser = new FileChooser();
 
-        //Set extension filter for text files
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        //Show save file dialog
         File file = fileChooser.showSaveDialog(LagerProgrammStart.getPrimaryStage());
 
         if (file != null) {
