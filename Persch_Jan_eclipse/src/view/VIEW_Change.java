@@ -15,6 +15,13 @@ public class VIEW_Change {
 		return vbox;
 	}
 
+	public static Text getDescritptionText() {
+		Text text = new Text();
+		text.setText("Zellen sind editierbar \n"
+				+ "Für Paletten \n"
+				+ "true oder false eingeben");
+		return text;	
+	}
 		
 	public static Text getText() {
 		Text text = new Text();

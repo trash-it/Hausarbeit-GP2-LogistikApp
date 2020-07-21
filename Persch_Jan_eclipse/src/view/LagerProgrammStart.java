@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import model.MODEL_Ware;
 
@@ -29,6 +30,7 @@ public class LagerProgrammStart extends Application {
 	static Text statusText = new Text();
 	static ObservableList<MODEL_Ware> data;
 	private static Stage pStage;
+	private static Text descriptionText = new Text();
 	
 
 
@@ -36,14 +38,16 @@ public class LagerProgrammStart extends Application {
 	@Override 
 	public void start(Stage primaryStage) {
 		statusText.setText("Startmenü");
+	
+		
+		
 		data = FXCollections.observableArrayList();
 		utilities.createOneListEntry.createTestEntry();
 		utilities.initialHelper.createShowAllTable();
 			
-		
 			BorderPane root = new BorderPane();
-			
-			
+			BorderPane.setMargin(statusText, new Insets(10, 10, 10, 10));
+						
             Label top = new Label("label top");
             top.setPadding(new Insets(25, 25, 25, 25));
             root.setTop(top);
@@ -53,6 +57,7 @@ public class LagerProgrammStart extends Application {
             root.setLeft(left);
             
             Label right = new Label("label right");
+            
             right.setPadding(new Insets(25, 25, 25, 25));
             root.setRight(right);
             
@@ -97,44 +102,44 @@ public class LagerProgrammStart extends Application {
             btn_importFromFile.setMinWidth(box_left.getPrefWidth());
             box_left.getChildren().addAll(btn_showAll, btn_add, btn_change, btn_delete, btn_exportToFile, btn_importFromFile);
             root.setLeft(box_left);
-         
-            
             
             box_center.setAlignment(Pos.TOP_CENTER);
-            // Text text_center = new Text();
-            // text_center.setText("Bitte die gewünschte Funktion auswählen");
+
+            
             root.setTop(statusText);
+            root.setRight(descriptionText);
+            
             root.setCenter(box_center);
-            
-            
-            
+      
             Scene scene = new Scene(root, 800,600);
             
             primaryStage.setTitle("Lagerprogramm Persch-Logistik");
             primaryStage.setScene(scene);
             primaryStage.show();
             pStage = primaryStage;
-            
-            
-            
+         
 	}
 	
 	
 	public static void changeCenterVBox(VBox box) {
 		box_center = box;
 
-
 	}
 	
 	public static void changeStatusText(Text text) {
 		statusText = text;
-		
+	}
+	
+	public static void changeDescription(Text text) {
+		descriptionText  = text;
 	}
 	
 	private void changeRoot(BorderPane root) {
 		box_center.setAlignment(Pos.CENTER_LEFT);
 		root.setCenter(box_center);
 		root.setTop(statusText);
+		root.setRight(descriptionText);
+		BorderPane.setMargin(statusText, new Insets(10, 10, 10, 10));
 	}
 	
 	public static ObservableList<MODEL_Ware> getWarenliste() {

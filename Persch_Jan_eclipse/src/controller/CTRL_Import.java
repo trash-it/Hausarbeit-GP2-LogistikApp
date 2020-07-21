@@ -33,11 +33,15 @@ public class CTRL_Import {
 			//scanner.useDelimiter("#");
 			
 			while( scanner.hasNext()){
-				view.LagerProgrammStart.addWare(scanner.nextLine(), Integer.parseInt(scanner.nextLine()), scanner.nextDouble() , scanner.hasNextBoolean());
-	//			System.out.print(scanner.next());
-//				System.out.println(scanner.nextInt());
-//				System.out.println(scanner.nextDouble());
-//				System.out.println(scanner.hasNextBoolean());
+				
+			
+				String name = scanner.next();
+				int anzahl = scanner.nextInt();
+				double gewicht = Double.parseDouble(scanner.next());
+				boolean palette = scanner.nextBoolean();
+				System.out.print("\n Name: " + name + " \n Anzahl: " +  anzahl + "\n Gewicht: " + gewicht + "\n Palette:" + palette);
+				view.LagerProgrammStart.addWare(name, anzahl, gewicht, palette);
+
 			}
 			 scanner.close(); 
 			

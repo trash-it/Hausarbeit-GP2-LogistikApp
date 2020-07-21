@@ -29,15 +29,18 @@ public class CTRL_ButtonController {
 			 CTRL_TableController.setTableContent(LagerProgrammStart.getWarenliste());
 			 LagerProgrammStart.changeCenterVBox(VIEW_ShowAll.getBox());
 			 LagerProgrammStart.changeStatusText(VIEW_ShowAll.getText());
+			 LagerProgrammStart.changeDescription(VIEW_ShowAll.getDescritptionText());
 			 break;
 		case "add":
 			LagerProgrammStart.changeCenterVBox(VIEW_Add.getBox());
 			LagerProgrammStart.changeStatusText(VIEW_Add.getText());
+			LagerProgrammStart.changeDescription(VIEW_Add.getDescritptionText());
 			break;
 		case "change":
 			CTRL_TableController.clearTable();
 			CTRL_TableController.setTableChangable();
 			CTRL_TableController.setTableContent(LagerProgrammStart.getWarenliste());
+			LagerProgrammStart.changeDescription(VIEW_Change.getDescritptionText());
 			
 			 LagerProgrammStart.changeCenterVBox(VIEW_Change.getBox());
 			 LagerProgrammStart.changeStatusText(VIEW_Change.getText());
@@ -46,15 +49,18 @@ public class CTRL_ButtonController {
 		case "delete":
 			LagerProgrammStart.changeCenterVBox(VIEW_Delete.getBox());
 			LagerProgrammStart.changeStatusText(VIEW_Delete.getText());
+			LagerProgrammStart.changeDescription(VIEW_Delete.getDescritptionText());
 			break;
 		case "export":
 			 LagerProgrammStart.changeCenterVBox(VIEW_Export.getBox());
 			 LagerProgrammStart.changeStatusText(VIEW_Export.getText());
+			 LagerProgrammStart.changeDescription(VIEW_Export.getDescritptionText());
 			 
 			 break;
 		case "import":
 			LagerProgrammStart.changeCenterVBox(VIEW_Import.getBox());
 			LagerProgrammStart.changeStatusText(VIEW_Import.getText());
+			LagerProgrammStart.changeDescription(VIEW_Import.getDescritptionText());
 			break;
 		}
 		return null;

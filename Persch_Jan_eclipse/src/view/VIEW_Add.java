@@ -1,6 +1,7 @@
 package view;
 
 import controller.CTRL_Add;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
@@ -27,12 +28,22 @@ public class VIEW_Add {
         btn_speichern.setOnAction(e -> CTRL_Add.actionButton(tf_artikel.getText(), Integer.parseInt(tf_anzahl.getText()), Float.parseFloat(tf_gewicht.getText()), checkCheckbox(cb_palette))); 
 		
 		vbox.getChildren().addAll(txt_artikel, tf_artikel, txt_anzahl, tf_anzahl, txt_gewicht, tf_gewicht, cb_palette, btn_speichern);
+		vbox.setPadding(new Insets(10, 0, 0, 50));
 		return vbox;
 	}
 
 	private static boolean checkCheckbox(CheckBox cb_palette) {
 		
 		return cb_palette.isSelected();
+	}
+	
+	public static Text getDescritptionText() {
+		Text text = new Text();
+		text.setText("Bitte die Artikeldaten eingeben. \n"
+				+ "Gewicht bei Bedarf mit . trennen \n"
+				+ "Palettierbar auswählen für ja \n"
+				+ "für nein deaktivieren "	);
+		return text;	
 	}
 
 	public static Text getText() {

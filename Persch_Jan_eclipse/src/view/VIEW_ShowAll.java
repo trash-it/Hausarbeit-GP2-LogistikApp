@@ -16,6 +16,13 @@ public class VIEW_ShowAll {
 	}
 
 		
+	public static Text getDescritptionText() {
+		Text text = new Text();
+		text.setText("Auflistung des \n"
+				+ "Lagerbestands");
+		return text;	
+	}
+	
 	public static Text getText() {
 		Text text = new Text();
 		text.setText("Zeige Lagerbestand");

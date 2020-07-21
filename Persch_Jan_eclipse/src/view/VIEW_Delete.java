@@ -31,6 +31,13 @@ public class VIEW_Delete {
 		return vbox;
 	}
 
+	public static Text getDescritptionText() {
+		Text text = new Text();
+		text.setText("Den zu löschenden \n "
+				+ "Artikelnamen eingeben");
+		return text;	
+	}
+	
 	public static Text getText() {
 		Text text = new Text();
 		text.setText("Auslagern");
