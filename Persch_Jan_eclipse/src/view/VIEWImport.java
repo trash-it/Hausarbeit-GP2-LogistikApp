@@ -1,25 +1,39 @@
 package view;
 
-import controller.CTRL_Export;
-import controller.CTRL_Import;
+import controller.CTRLExport;
+import controller.CTRLImport;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class VIEW_Import {
+// TODO: Auto-generated Javadoc
+/**
+ * The Class VIEW_Import.
+ */
+public class VIEWImport {
 
+	/**
+	 * Gets the box.
+	 *
+	 * @return the box
+	 */
 	public static VBox getBox() { 
 		VBox vbox = new VBox();
 		Button btn_Import = new Button("Sicherungsdatei auswählen");
 		
-		btn_Import.setOnAction( e -> { CTRL_Import.deleteWaren(); CTRL_Import.chooseFile();});
+		btn_Import.setOnAction( e -> { CTRLImport.deleteWaren(); CTRLImport.chooseFile();});
 		
 		vbox.getChildren().add(btn_Import);
-		vbox.setPadding(new Insets(25, 0, 0, 100));
+		vbox.setPadding(new Insets(10, 0, 0, 50));
 		return vbox;
 	}
 	
+	/**
+	 * Gets the descritption text.
+	 *
+	 * @return the descritption text
+	 */
 	public static Text getDescritptionText() {
 		Text text = new Text();
 		text.setText("Speicherort der TXT auswählen \n"
@@ -29,6 +43,11 @@ public class VIEW_Import {
 		return text;	
 	}
 
+	/**
+	 * Gets the text.
+	 *
+	 * @return the text
+	 */
 	public static Text getText() {
 		Text text = new Text();
 		text.setText("Bestand löschen und Sicherung einspielen");

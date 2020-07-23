@@ -1,6 +1,6 @@
 package view;
 
-import controller.CTRL_Add;
+import controller.CTRLAdd;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -8,8 +8,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class VIEW_Add {
 
+/**
+ * The Class VIEW_Add.
+ */
+public class VIEWAdd {
+
+	/**
+	 * Gets the box.
+	 *
+	 * @return the box
+	 */
 	public static VBox getBox() { 
 		VBox vbox = new VBox();
 		Text txt_artikel = new Text(20, 40, "Artikel:");
@@ -25,18 +34,29 @@ public class VIEW_Add {
 		
 		Button btn_speichern = new Button("Speichern");
         
-        btn_speichern.setOnAction(e -> CTRL_Add.actionButton(tf_artikel.getText(), Integer.parseInt(tf_anzahl.getText()), Float.parseFloat(tf_gewicht.getText()), checkCheckbox(cb_palette))); 
+        btn_speichern.setOnAction(e -> CTRLAdd.actionButton(tf_artikel.getText(), Integer.parseInt(tf_anzahl.getText()), Float.parseFloat(tf_gewicht.getText()), checkCheckbox(cb_palette))); 
 		
 		vbox.getChildren().addAll(txt_artikel, tf_artikel, txt_anzahl, tf_anzahl, txt_gewicht, tf_gewicht, cb_palette, btn_speichern);
 		vbox.setPadding(new Insets(10, 0, 0, 50));
 		return vbox;
 	}
 
+	/**
+	 * Check checkbox.
+	 *
+	 * @param cb_palette the cb palette
+	 * @return true, if successful
+	 */
 	private static boolean checkCheckbox(CheckBox cb_palette) {
 		
 		return cb_palette.isSelected();
 	}
 	
+	/**
+	 * Gets the descritption text.
+	 *
+	 * @return the descritption text
+	 */
 	public static Text getDescritptionText() {
 		Text text = new Text();
 		text.setText("Bitte die Artikeldaten eingeben. \n"
@@ -46,6 +66,11 @@ public class VIEW_Add {
 		return text;	
 	}
 
+	/**
+	 * Gets the text.
+	 *
+	 * @return the text
+	 */
 	public static Text getText() {
 		Text text = new Text();
 		text.setText("Einlagern");

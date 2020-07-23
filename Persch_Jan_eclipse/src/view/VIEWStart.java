@@ -3,8 +3,17 @@ package view;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
-public class VIEW_Start {
+// TODO: Auto-generated Javadoc
+/**
+ * The Class VIEW_Start.
+ */
+public class VIEWStart {
 
+	/**
+	 * Gets the box.
+	 *
+	 * @return the box
+	 */
 	public static VBox getBox() { 
 		VBox vbox = new VBox();
 		Text text = new Text(20, 40, "Willkommen. Bitte Funkton auswählen");
@@ -13,6 +22,11 @@ public class VIEW_Start {
 		return vbox;
 	}
 	
+	/**
+	 * Gets the text.
+	 *
+	 * @return the text
+	 */
 	public static Text getText() {
 		Text text = new Text();
 		text.setText("Startmenü");
