@@ -33,16 +33,16 @@ public class VIEWChange {
      */ 
     public static VBox getBottomBox() {
         VBox vbox = new VBox();
-        vbox.getChildren().add(getDescritptionText()); 
+        vbox.getChildren().add(getDescriptionText()); 
         return  vbox;
     }
     
     /**
-     * Gets the descritption text.
+     * Gets the description text.
      *
-     * @return the descritption text
+     * @return the description text
      */
-    public static Text getDescritptionText() {
+    public static Text getDescriptionText() {
         Text text = new Text();
         text.setText("Zellen sind editierbar "
                 + "Für Paletten true oder false eingeben \n"
