@@ -176,7 +176,7 @@ public class LagerProgrammStart extends Application {
      * @param palette the palette
      */
     public static void addWare(String name, int anzahl, double gewicht, boolean palette) {
-        System.out.println("LagerProgrammStart addware");
+       // System.out.println("LagerProgrammStart addware");
         data.add(new MODELWare(name, anzahl, gewicht, palette));
     }
 	

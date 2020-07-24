@@ -23,12 +23,12 @@ public class VIEWAdd {
     public static VBox getCenterBox() { 
         VBox vbox = new VBox();
         Text txtartikel = new Text(20, 40, "Artikel:");
-        Text txtanzahl = new Text(20, 40, "Anzahl:");
-        Text txtgewicht = new Text(20, 40, "Gewicht:");      
+        Text txtanzahl = new Text(20, 40, "Anzahl: Nur Zahlen");
+        Text txtgewicht = new Text(20, 40, "Gewicht: Nur Zahlen");      
         TextField tfartikel = new TextField();
         TextField tfanzahl = new TextField();
         TextField tfgewicht = new TextField();        
-        CheckBox cbpalette = new CheckBox("Palettierbar?");
+        CheckBox cbpalette = new CheckBox();
         cbpalette.setIndeterminate(true);        
         Button btnspeichern = new Button("Speichern");        
         btnspeichern.setOnAction(e -> CTRLAdd.actionButton(tfartikel.getText(), Integer.parseInt(tfanzahl.getText()), Float.parseFloat(tfgewicht.getText()), checkCheckbox(cbpalette))); 
@@ -67,9 +67,9 @@ public class VIEWAdd {
     public static Text getDescriptionText() {
         Text text = new Text();
         text.setText("Bitte die Artikeldaten eingeben. \n"
-                + "Gewicht bei Bedarf mit . Trennen \n"
-                + "Palettierbar auswählen für JA \n"
-                + "für NEIN deaktivieren ");
+                + "Gewicht bei Bedarf mit . trennen \n"
+                + "Palettierbar auswählen: \n"
+                + "für JA aktivieren für NEIN deaktivieren ");
         text.setTextAlignment(TextAlignment.CENTER);
 	return text;	
     }

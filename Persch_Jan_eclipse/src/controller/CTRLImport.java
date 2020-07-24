@@ -40,7 +40,7 @@ public class CTRLImport {
 		int anzahl = scanner.nextInt();
 		double gewicht = Double.parseDouble(scanner.next());
 		boolean palette = scanner.nextBoolean();
-		System.out.print("\n Name: " + name + " \n Anzahl: " +  anzahl + "\n Gewicht: " + gewicht + "\n Palette:" + palette);
+		//System.out.print("\n Name: " + name + " \n Anzahl: " +  anzahl + "\n Gewicht: " + gewicht + "\n Palette:" + palette);
 		view.LagerProgrammStart.addWare(name, anzahl, gewicht, palette);
 	    }
 	 scanner.close(); 	

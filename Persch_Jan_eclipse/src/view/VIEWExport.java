@@ -21,7 +21,7 @@ public class VIEWExport {
         VBox vbox = new VBox();
         Button btnExport = new Button("Bestand exportieren");
         
-        btnExport.setOnAction(e -> {CTRLExport.createFile(); CTRLExport.exportFile();});
+        btnExport.setOnAction(e -> {CTRLExport.createFileText(); CTRLExport.exportFile();});
         
         vbox.getChildren().add(btnExport);
         vbox.setPadding(new Insets(10, 0, 0, 50));

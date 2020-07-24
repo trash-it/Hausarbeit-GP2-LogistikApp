@@ -19,7 +19,7 @@ public class CreateTestListEntry {
      * Creates the test entries.
      */
     public static void createTestEntry() {
-        System.out.println("Erstelle Testeintrag");
+      //  System.out.println("Erstelle Testeintrag");
         view.LagerProgrammStart.addWare(NAME, ANZAHL, GEWICHT , PALETTE);
         view.LagerProgrammStart.addWare("TESTZwei", 2, 22.22 , false);
     }

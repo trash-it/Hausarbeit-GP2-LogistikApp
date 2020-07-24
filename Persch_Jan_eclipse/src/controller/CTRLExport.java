@@ -16,6 +16,7 @@ import view.LagerProgrammStart;
  */
 public class CTRLExport {
 	
+	/** the Text which will be written in the TXT */
     static String finalText;
     /** The warenlist. */
     static ObservableList<MODELWare> waren = LagerProgrammStart.getWarenliste();
@@ -23,7 +24,7 @@ public class CTRLExport {
     /**
      * Creates the file.
      */
-    public static void createFile() {
+    public static void createFileText() {
 	StringBuilder tempText = new StringBuilder();
 	//	tempText.append("StartOfFile" + "\n");
 	for (MODELWare artikel : waren) {
@@ -50,14 +51,14 @@ public class CTRLExport {
     /**
      * Save text to file.
      *
-     * @param finalText2 the final text 2
-     * @param file the file
+     * @param writableText the text for the txt
+     * @param the export txt file
      */
-    private static void saveTextToFile(String finalText2, File file) {
+    private static void saveTextToFile(String writableText, File file) {
        try {
            PrintWriter writer;
 	   writer = new PrintWriter(file);
-	   writer.println(finalText2);
+	   writer.println(writableText);
 	   writer.close();
 	   } catch (IOException ex) {
 	       System.out.println("CTRL_Export Fehler beim erstellen der Datei");

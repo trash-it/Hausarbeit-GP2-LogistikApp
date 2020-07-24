@@ -4,6 +4,7 @@ package view;
 import controller.CTRLDelete;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -34,6 +35,7 @@ public class VIEWDelete {
         Text txtartikel = new Text(20, 40, "Welcher Artikel soll gelöscht werden?:");
         TextField tfartikel = new TextField();
         Button btndelete = new Button("Löschen");
+        vbox.setPadding(new Insets(10, 0, 0, 50));
         vbox.getChildren().addAll(list, txtartikel, tfartikel, btndelete);
         btndelete.setOnAction(e -> CTRLDelete.actionButton(tfartikel.getText())); 
         return vbox;
