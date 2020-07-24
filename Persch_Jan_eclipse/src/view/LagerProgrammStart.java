@@ -9,9 +9,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -96,10 +99,19 @@ public class LagerProgrammStart extends Application {
         box_left.getChildren().addAll(btn_showAll, btn_add, btn_change, btn_delete,
                 btn_exportToFile, btn_importFromFile);
         root.setLeft(box_left);
+        
+        Image image = new Image ("resources/lager.jpg");
+        ImageView imgView = new ImageView(image);
+        imgView.setImage(image);
+        Rectangle2D viewport = new Rectangle2D(0, 80, 200, 425); 
+        imgView.setViewport(viewport);
+        VBox boxright = new VBox();
+        boxright.getChildren().add(imgView);
+        boxright.setPadding(new Insets(20, 25, 25, 25));
             
         boxcenter.setAlignment(Pos.TOP_CENTER);
         root.setTop(statusText);
-        root.setRight(descriptionText);
+        root.setRight(boxright);
         root.setCenter(boxcenter);
         Scene scene = new Scene(root, 800, 600);
             
@@ -130,16 +142,6 @@ public class LagerProgrammStart extends Application {
     }
 	
     /**
-     * Change description.
-     *
-     * @param text the text
-     */
-    public static void changeDescription(Text text) {
-
-        descriptionText  = text;
-    }
-	
-    /**
      * Change root.
      *
      * @param root the root
@@ -149,7 +151,7 @@ public class LagerProgrammStart extends Application {
 	
 	root.setCenter(boxcenter);
 	root.setTop(statusText);
-	boxbottom.setAlignment(Pos.CENTER);
+	boxbottom.setAlignment(Pos.TOP_CENTER);
 	root.setBottom(boxbottom);
 	
 	BorderPane.setMargin(statusText, new Insets(10, 10, 10, 10));
