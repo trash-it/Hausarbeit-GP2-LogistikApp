@@ -32,37 +32,32 @@ public class CTRLButtonController {
 	       CTRLTableController.clearTable();
 	       CTRLTableController.setTableNotChangable();
 	       CTRLTableController.setTableContent(LagerProgrammStart.getWarenliste());
-	       LagerProgrammStart.changeCenterVBox(VIEWShowAll.getBox());
-	       LagerProgrammStart.changeStatusText(VIEWShowAll.getText());
-	       LagerProgrammStart.changeDescription(VIEWShowAll.getDescritptionText());
+	       LagerProgrammStart.changeVBox(VIEWShowAll.getBox(), VIEWShowAll.getBottomBox());
+	       LagerProgrammStart.changeStatusText(VIEWShowAll.getStatusText());
 	       break;
 	   case "add":
-	       LagerProgrammStart.changeCenterVBox(VIEWAdd.getBox());
-	       LagerProgrammStart.changeStatusText(VIEWAdd.getText());
-	       LagerProgrammStart.changeDescription(VIEWAdd.getDescritptionText());
+	       LagerProgrammStart.changeVBox(VIEWAdd.getCenterBox(), VIEWAdd.getBottomBox());
+	       LagerProgrammStart.changeStatusText(VIEWAdd.getStatusText());
 	       break;
 	   case "change":
 	       CTRLTableController.clearTable();
 	       CTRLTableController.setTableChangable();
 	       CTRLTableController.setTableContent(LagerProgrammStart.getWarenliste());
-	       LagerProgrammStart.changeDescription(VIEWChange.getDescritptionText());
-	       LagerProgrammStart.changeCenterVBox(VIEWChange.getBox());
-	       LagerProgrammStart.changeStatusText(VIEWChange.getText());
+	       LagerProgrammStart.changeVBox(VIEWChange.getBox(), VIEWChange.getBottomBox());
+	       LagerProgrammStart.changeStatusText(VIEWChange.getStatusText());
 	       break;
 	   case "delete":
-	       LagerProgrammStart.changeCenterVBox(VIEWDelete.getBox());
-	       LagerProgrammStart.changeStatusText(VIEWDelete.getText());
-	       LagerProgrammStart.changeDescription(VIEWDelete.getDescritptionText());
+	       LagerProgrammStart.changeVBox(VIEWDelete.getBox(), VIEWDelete.getBottomBox());
+	       LagerProgrammStart.changeStatusText(VIEWDelete.getStatusText());
+
 	       break;
 	   case "export":
-	       LagerProgrammStart.changeCenterVBox(VIEWExport.getBox());
-	       LagerProgrammStart.changeStatusText(VIEWExport.getText());
-	       LagerProgrammStart.changeDescription(VIEWExport.getDescritptionText());	 
+	       LagerProgrammStart.changeVBox(VIEWExport.getBox(), VIEWExport.getBottomBox());
+	       LagerProgrammStart.changeStatusText(VIEWExport.getStatusText());
 	       break;
 	   case "import":
-	       LagerProgrammStart.changeCenterVBox(VIEWImport.getBox());
-	       LagerProgrammStart.changeStatusText(VIEWImport.getText());
-	       LagerProgrammStart.changeDescription(VIEWImport.getDescritptionText());
+	       LagerProgrammStart.changeVBox(VIEWImport.getBox(), VIEWImport.getBottomBox());
+	       LagerProgrammStart.changeStatusText(VIEWImport.getStatusText());
 	       break;
 	   }
 	return null;

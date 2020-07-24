@@ -4,50 +4,58 @@ import controller.CTRLTableController;
 import javafx.geometry.Insets;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
 
-
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class VIEW_ShowAll.
  */
 public class VIEWShowAll {
-
 	
-	/**
-	 * Gets the box.
-	 *
-	 * @return the box
-	 */
-	public static VBox getBox() { 
-		VBox vbox = new VBox();
-		vbox.setPadding(new Insets(10, 50 , 50 , 50));
-		vbox.getChildren().add(CTRLTableController.getTable());
-		return vbox;
-	}
-
-		
-	/**
-	 * Gets the descritption text.
-	 *
-	 * @return the descritption text
-	 */
-	public static Text getDescritptionText() {
-		Text text = new Text();
-		text.setText("Auflistung des \n"
-				+ "Lagerbestands");
-		return text;	
-	}
+    /**
+     * Gets the box.
+     *
+     * @return the box
+     */
+    public static VBox getBox() { 
+        VBox vbox = new VBox();
+        vbox.setPadding(new Insets(10, 50 , 50, 50));
+        vbox.getChildren().add(CTRLTableController.getTable());
+        return vbox;
+    }
 	
-	/**
-	 * Gets the text.
-	 *
-	 * @return the text
-	 */
-	public static Text getText() {
-		Text text = new Text();
-		text.setText("Zeige Lagerbestand");
-		return text;
-	}
+    /**
+     * Gets the bottomBox .
+     *
+     * @return the bottomBox 
+     */ 
+    public static VBox getBottomBox() {
+        VBox vbox = new VBox();
+        vbox.getChildren().add(getDescritptionText()); 
+        return  vbox;
+    }
+    
+    /**
+     * Gets the descritption text.
+     *
+     * @return the descritption text
+     */
+    public static Text getDescritptionText() {
+        Text text = new Text();
+        text.setText("Auflistung des "
+                + "Lagerbestands");
+        text.setTextAlignment(TextAlignment.CENTER);
+        return text;	
+    }
+	
+    /**
+     * Gets the Status text.
+     *
+     * @return the text
+     */
+    public static Text getStatusText() {
+        Text text = new Text();
+        text.setText("Zeige Lagerbestand");
+        return text;
+    }
 
 }

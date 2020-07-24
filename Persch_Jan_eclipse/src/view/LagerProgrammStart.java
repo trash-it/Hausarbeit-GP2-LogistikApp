@@ -19,8 +19,6 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import model.MODELWare;
 
-
-// TODO: Auto-generated Javadoc
 /**
  * The Class LagerProgrammStart.
  *
@@ -30,6 +28,8 @@ public class LagerProgrammStart extends Application {
 	
     /** The box center. */
     static VBox boxcenter = VIEWStart.getBox();
+    /** The box bottom. */
+    static VBox boxbottom = new VBox();
     /** The status text. */
     static Text statusText = new Text();
 
@@ -101,7 +101,7 @@ public class LagerProgrammStart extends Application {
         root.setTop(statusText);
         root.setRight(descriptionText);
         root.setCenter(boxcenter);
-        Scene scene = new Scene(root, 800,600);
+        Scene scene = new Scene(root, 800, 600);
             
         primaryStage.setTitle("Lagerprogramm Persch-Logistik");
         primaryStage.setScene(scene);
@@ -115,8 +115,9 @@ public class LagerProgrammStart extends Application {
      *
      * @param box the box
      */
-    public static void changeCenterVBox(VBox box) {
-        boxcenter = box;
+    public static void changeVBox(VBox box1, VBox box2) {
+        boxbottom = box2;
+        boxcenter = box1;
     }
 	
     /**
@@ -134,6 +135,7 @@ public class LagerProgrammStart extends Application {
      * @param text the text
      */
     public static void changeDescription(Text text) {
+
         descriptionText  = text;
     }
 	
@@ -144,9 +146,12 @@ public class LagerProgrammStart extends Application {
      */
     private void changeRoot(BorderPane root) {
 	boxcenter.setAlignment(Pos.CENTER_LEFT);
+	
 	root.setCenter(boxcenter);
 	root.setTop(statusText);
-	root.setRight(descriptionText);
+	boxbottom.setAlignment(Pos.CENTER);
+	root.setBottom(boxbottom);
+	
 	BorderPane.setMargin(statusText, new Insets(10, 10, 10, 10));
     }
 	
