@@ -6,8 +6,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
-
-
 // TODO: Auto-generated Javadoc
 /**
  * The Class VIEW_Change.
@@ -19,9 +17,9 @@ public class VIEWChange {
      *
      * @return the box
      */
-    public static VBox getBox() { 
+    public static VBox getBox() {
         VBox vbox = new VBox();
-        vbox.setPadding(new Insets(10, 50 , 50 , 50));
+        vbox.setPadding(new Insets(10, 50, 50, 50));
         vbox.getChildren().add(CTRLTableController.getTable());
         return vbox;
     }
@@ -29,14 +27,14 @@ public class VIEWChange {
     /**
      * Gets the bottomBox which includes the descriptionText.
      *
-     * @return the bottomBox 
-     */ 
+     * @return the bottomBox
+     */
     public static VBox getBottomBox() {
         VBox vbox = new VBox();
-        vbox.getChildren().add(getDescriptionText()); 
-        return  vbox;
+        vbox.getChildren().add(getDescriptionText());
+        return vbox;
     }
-    
+
     /**
      * Gets the description text.
      *
@@ -48,9 +46,9 @@ public class VIEWChange {
                 + "Für Paletten true oder false eingeben \n"
                 + "Mit Enter bestätigen");
         text.setTextAlignment(TextAlignment.CENTER);
-        return text;	
+        return text;
     }
-		
+
     /**
      * Gets the Status text.
      *

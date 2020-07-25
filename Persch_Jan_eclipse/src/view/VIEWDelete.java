@@ -1,6 +1,5 @@
 package view;
 
-
 import controller.CTRLDelete;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,35 +22,35 @@ public class VIEWDelete {
      *
      * @return the box
      */
-    public static VBox getBox() { 
+    public static VBox getBox() {
         VBox vbox = new VBox();
         ListView<String> list = new ListView<>();
         ObservableList<String> items = FXCollections.observableArrayList();
         int i = 1;
-        for (MODELWare artikel: LagerProgrammStart.getWarenliste()) {     	
+        for (MODELWare artikel : LagerProgrammStart.getWarenliste()) {
             items.add(i + " " + artikel.getName());
             ++i;
         }
         list.setItems(items);
-		
+
         Text txtartikel = new Text(20, 40, "Welcher Artikel soll gelöscht werden?:");
         TextField tfartikel = new TextField();
         Button btndelete = new Button("Löschen");
         vbox.setPadding(new Insets(10, 0, 0, 50));
         vbox.getChildren().addAll(list, txtartikel, tfartikel, btndelete);
-        btndelete.setOnAction(e -> CTRLDelete.actionButton(tfartikel.getText())); 
+        btndelete.setOnAction(e -> CTRLDelete.actionButton(tfartikel.getText()));
         return vbox;
     }
-    
+
     /**
      * Gets the bottomBox which contains the description.
      *
-     * @return the bottomBox 
-     */ 
+     * @return the bottomBox
+     */
     public static VBox getBottomBox() {
         VBox vbox = new VBox();
-        vbox.getChildren().add(getDescriptionText()); 
-        return  vbox;
+        vbox.getChildren().add(getDescriptionText());
+        return vbox;
     }
 
     /**
@@ -61,12 +60,12 @@ public class VIEWDelete {
      */
     public static Text getDescriptionText() {
         Text text = new Text();
-        text.setText("Den zu löschenden "
-                + "Artikelnamen eingeben");
+        text.setText("Den zu löschenden Artikelnamen \n"
+                + "oder die Position eingeben.");
         text.setTextAlignment(TextAlignment.CENTER);
-        return text;	
+        return text;
     }
-	
+
     /**
      * Gets the Status text.
      *
@@ -75,7 +74,7 @@ public class VIEWDelete {
     public static Text getStatusText() {
         Text text = new Text();
         text.setText("Auslagern");
-        
+
         return text;
     }
 }

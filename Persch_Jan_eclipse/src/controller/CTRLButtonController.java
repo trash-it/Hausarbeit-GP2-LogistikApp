@@ -12,14 +12,13 @@ import view.VIEWExport;
 import view.VIEWImport;
 import view.VIEWShowAll;
 
-
 /**
  * The Class CTRL_ButtonController.
  *
- * @author  Jan Persch
+ * @author Jan Persch
  */
 public class CTRLButtonController {
-	
+
     /**
      * Action button.
      *
@@ -27,40 +26,42 @@ public class CTRLButtonController {
      * @return the node
      */
     public static Node actionButton(String string) {
-	switch (string) {
-	   case "showAll":
-	       CTRLTableController.clearTable();
-	       CTRLTableController.setTableNotChangable();
-	       CTRLTableController.setTableContent(LagerProgrammStart.getWarenliste());
-	       LagerProgrammStart.changeVBox(VIEWShowAll.getBox(), VIEWShowAll.getBottomBox());
-	       LagerProgrammStart.changeStatusText(VIEWShowAll.getStatusText());
-	       break;
-	   case "add":
-	       LagerProgrammStart.changeVBox(VIEWAdd.getCenterBox(), VIEWAdd.getBottomBox());
-	       LagerProgrammStart.changeStatusText(VIEWAdd.getStatusText());
-	       break;
-	   case "change":
-	       CTRLTableController.clearTable();
-	       CTRLTableController.setTableChangable();
-	       CTRLTableController.setTableContent(LagerProgrammStart.getWarenliste());
-	       LagerProgrammStart.changeVBox(VIEWChange.getBox(), VIEWChange.getBottomBox());
-	       LagerProgrammStart.changeStatusText(VIEWChange.getStatusText());
-	       break;
-	   case "delete":
-	       LagerProgrammStart.changeVBox(VIEWDelete.getBox(), VIEWDelete.getBottomBox());
-	       LagerProgrammStart.changeStatusText(VIEWDelete.getStatusText());
+        switch (string) {
+        case "showAll":
+            CTRLTableController.clearTable();
+            CTRLTableController.setTableNotChangable();
+            CTRLTableController.setTableContent(LagerProgrammStart.getWarenliste());
+            LagerProgrammStart.changeVBox(VIEWShowAll.getBox(), VIEWShowAll.getBottomBox());
+            LagerProgrammStart.changeStatusText(VIEWShowAll.getStatusText());
+            break;
+        case "add":
+            LagerProgrammStart.changeVBox(VIEWAdd.getCenterBox(), VIEWAdd.getBottomBox());
+            LagerProgrammStart.changeStatusText(VIEWAdd.getStatusText());
+            break;
+        case "change":
+            CTRLTableController.clearTable();
+            CTRLTableController.setTableChangable();
+            CTRLTableController.setTableContent(LagerProgrammStart.getWarenliste());
+            LagerProgrammStart.changeVBox(VIEWChange.getBox(), VIEWChange.getBottomBox());
+            LagerProgrammStart.changeStatusText(VIEWChange.getStatusText());
+            break;
+        case "delete":
+            LagerProgrammStart.changeVBox(VIEWDelete.getBox(), VIEWDelete.getBottomBox());
+            LagerProgrammStart.changeStatusText(VIEWDelete.getStatusText());
 
-	       break;
-	   case "export":
-	       LagerProgrammStart.changeVBox(VIEWExport.getBox(), VIEWExport.getBottomBox());
-	       LagerProgrammStart.changeStatusText(VIEWExport.getStatusText());
-	       break;
-	   case "import":
-	       LagerProgrammStart.changeVBox(VIEWImport.getBox(), VIEWImport.getBottomBox());
-	       LagerProgrammStart.changeStatusText(VIEWImport.getStatusText());
-	       break;
-	   }
-	return null;
-	}
+            break;
+        case "export":
+            LagerProgrammStart.changeVBox(VIEWExport.getBox(), VIEWExport.getBottomBox());
+            LagerProgrammStart.changeStatusText(VIEWExport.getStatusText());
+            break;
+        case "import":
+            LagerProgrammStart.changeVBox(VIEWImport.getBox(), VIEWImport.getBottomBox());
+            LagerProgrammStart.changeStatusText(VIEWImport.getStatusText());
+            break;
+        default:
+            break;
+        }
+        return null;
+    }
 
 }

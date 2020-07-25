@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @author Jan Persch
  */
 public class MODELWare implements Serializable {
-	
+
     /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 1L;
     /** The name. */
@@ -22,22 +22,21 @@ public class MODELWare implements Serializable {
     private double gewicht;
     /** The palette. */
     private boolean palette;
-    
+
     /**
      * Instantiates a new MODELWareObject.
      *
-     * @param name the name of the article
-     * @param anzahl the anzahl of the article
+     * @param name    the name of the article
+     * @param anzahl  the anzahl of the article
      * @param gewicht the gewicht of the article
      * @param palette the palette boolean
      */
     public MODELWare(String name, int anzahl, double gewicht, boolean palette) {
         this.name = name;
-	this.anzahl = anzahl; 
-	this.gewicht = gewicht;
-	this.palette = palette;
+        this.anzahl = anzahl;
+        this.gewicht = gewicht;
+        this.palette = palette;
     }
-
 
     /**
      * Gets the name.
@@ -47,7 +46,7 @@ public class MODELWare implements Serializable {
     public String getName() {
         return name;
     }
-    
+
     /**
      * Gets the amount.
      *
@@ -56,7 +55,7 @@ public class MODELWare implements Serializable {
     public int getAnzahl() {
         return anzahl;
     }
-	
+
     /**
      * Gets the weight.
      *
@@ -65,7 +64,7 @@ public class MODELWare implements Serializable {
     public double getGewicht() {
         return gewicht;
     }
-	
+
     /**
      * Checks if is palette.
      *
@@ -83,7 +82,7 @@ public class MODELWare implements Serializable {
     public void setArtikelName(String newArtikelName) {
         name = newArtikelName;
     }
-    
+
     /**
      * Sets the palette boolean.
      *
@@ -108,10 +107,7 @@ public class MODELWare implements Serializable {
      * @param newArtikelGewicht the new article weight.
      */
     public void setArtikelGewicht(double newArtikelGewicht) {
-        gewicht = newArtikelGewicht;	
+        gewicht = newArtikelGewicht;
     }
-	
 
-
-	
 }

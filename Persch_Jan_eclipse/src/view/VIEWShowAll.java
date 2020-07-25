@@ -10,30 +10,30 @@ import javafx.scene.text.TextAlignment;
  * The Class VIEW_ShowAll.
  */
 public class VIEWShowAll {
-	
+
     /**
      * Gets the Vbox which includes the TableView.
      *
      * @return the box
      */
-    public static VBox getBox() { 
+    public static VBox getBox() {
         VBox vbox = new VBox();
-        vbox.setPadding(new Insets(10, 50 , 50, 50));
+        vbox.setPadding(new Insets(10, 50, 50, 50));
         vbox.getChildren().add(CTRLTableController.getTable());
         return vbox;
     }
-	
+
     /**
      * Gets the bottomBox which the descriptiontext.
      *
-     * @return the bottomBox 
-     */ 
+     * @return the bottomBox
+     */
     public static VBox getBottomBox() {
         VBox vbox = new VBox();
-        vbox.getChildren().add(getDescriptionText()); 
-        return  vbox;
+        vbox.getChildren().add(getDescriptionText());
+        return vbox;
     }
-    
+
     /**
      * Gets the description text.
      *
@@ -41,12 +41,11 @@ public class VIEWShowAll {
      */
     public static Text getDescriptionText() {
         Text text = new Text();
-        text.setText("Auflistung des "
-                + "Lagerbestands");
+        text.setText("Auflistung des " + "Lagerbestands");
         text.setTextAlignment(TextAlignment.CENTER);
-        return text;	
+        return text;
     }
-	
+
     /**
      * Gets the Status text.
      *

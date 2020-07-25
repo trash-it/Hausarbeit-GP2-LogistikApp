@@ -17,28 +17,31 @@ public class VIEWImport {
      *
      * @return the box
      */
-    public static VBox getBox() { 
+    public static VBox getBox() {
         VBox vbox = new VBox();
         Button btnImport = new Button("Sicherungsdatei auswählen");
-        
-        btnImport.setOnAction(e -> { CTRLImport.deleteWaren(); CTRLImport.chooseFile();});
-        
+
+        btnImport.setOnAction(e -> {
+            CTRLImport.deleteWaren();
+            CTRLImport.chooseFile();
+        });
+
         vbox.getChildren().add(btnImport);
         vbox.setPadding(new Insets(10, 0, 0, 50));
         return vbox;
     }
-    
+
     /**
      * Gets the bottomBox .
      *
-     * @return the bottomBox 
-     */ 
+     * @return the bottomBox
+     */
     public static VBox getBottomBox() {
         VBox vbox = new VBox();
-        vbox.getChildren().add(getDescriptionText()); 
-        return  vbox;
+        vbox.getChildren().add(getDescriptionText());
+        return vbox;
     }
-    
+
     /**
      * Gets the description text.
      *
@@ -46,12 +49,12 @@ public class VIEWImport {
      */
     public static Text getDescriptionText() {
         Text text = new Text();
-        text.setText("Speicherort der TXT auswählen \n"
-                + "ACHTUNG! \n"
-                + "Ein Import löscht den vorhanden "
-                + "Bestand");
+        text.setText(
+                "Speicherort der TXT auswählen \n"
+                        + "ACHTUNG! \n" + "Ein Import löscht den vorhanden " 
+                        + "Bestand");
         text.setTextAlignment(TextAlignment.CENTER);
-        return text;	
+        return text;
     }
 
     /**

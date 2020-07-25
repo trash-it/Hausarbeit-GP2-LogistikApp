@@ -17,28 +17,31 @@ public class VIEWExport {
      *
      * @return the box
      */
-    public static VBox getBox() { 
+    public static VBox getBox() {
         VBox vbox = new VBox();
         Button btnExport = new Button("Bestand exportieren");
-        
-        btnExport.setOnAction(e -> {CTRLExport.createFileText(); CTRLExport.exportFile();});
-        
+
+        btnExport.setOnAction(e -> {
+            CTRLExport.createFileText();
+            CTRLExport.exportFile();
+        });
+
         vbox.getChildren().add(btnExport);
         vbox.setPadding(new Insets(10, 0, 0, 50));
         return vbox;
-    } 
-    
+    }
+
     /**
      * Gets the bottomBox with the descriptiontext.
      *
-     * @return the bottomBox 
-     */ 
+     * @return the bottomBox
+     */
     public static VBox getBottomBox() {
         VBox vbox = new VBox();
-        vbox.getChildren().add(getDescriptionText()); 
-        return  vbox;
+        vbox.getChildren().add(getDescriptionText());
+        return vbox;
     }
-    
+
     /**
      * Gets the description text.
      *
@@ -46,13 +49,14 @@ public class VIEWExport {
      */
     public static Text getDescriptionText() {
         Text text = new Text();
-        text.setText("Speicherort und Dateinamen wählen "
-                + "um den Bestand in eine importierbare \n "
-                + "TXT zu speichern");
+        text.setText(
+                "Speicherort und Dateinamen wählen " 
+                        + "um den Bestand in eine importierbare \n " 
+                        + "TXT zu speichern");
         text.setTextAlignment(TextAlignment.CENTER);
-        return text;	
+        return text;
     }
-    
+
     /**
      * Gets the Status text.
      *

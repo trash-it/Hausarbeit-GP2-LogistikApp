@@ -12,7 +12,7 @@ public class VIEWStatus {
      *
      * @return the text
      */
-    public static Text getText() { 
+    public static Text getText() {
         Text text = new Text(20, 40, "Startmenü");
         return text;
     }

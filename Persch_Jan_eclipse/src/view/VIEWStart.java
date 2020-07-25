@@ -13,11 +13,11 @@ public class VIEWStart {
      *
      * @return the box
      */
-    public static VBox getBox() { 
+    public static VBox getBox() {
         VBox vbox = new VBox();
-        Text text = new Text(20, 40, "Willkommen. Bitte Funkton auswählen");	
+        Text text = new Text(20, 40, "Willkommen. Bitte Funkton auswählen");
         vbox.getChildren().add(text);
-	return vbox;
+        return vbox;
     }
 
     /**
@@ -30,5 +30,5 @@ public class VIEWStart {
         text.setText("Startmenü");
         return text;
     }
-	
+
 }
