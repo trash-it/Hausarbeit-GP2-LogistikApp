@@ -12,7 +12,7 @@ import view.VIEWExport;
 import view.VIEWImport;
 import view.VIEWShowAll;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class CTRL_ButtonController.
  *

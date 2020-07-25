@@ -48,7 +48,7 @@ public class CTRLTableController {
 	 * @param warenliste the new table content
 	 */
 	public static void setTableContent(ObservableList<MODELWare> warenliste) {
-
+		//connects the celltype with the MODELWare attribute
 		tcartikel.setCellValueFactory(new PropertyValueFactory<>("name"));
 		tcanzahl.setCellValueFactory(new PropertyValueFactory<>("anzahl"));
 		tcgewicht.setCellValueFactory(new PropertyValueFactory<>("gewicht"));
@@ -66,7 +66,7 @@ public class CTRLTableController {
 		tcpalette.setCellFactory(
 				TextFieldTableCell.<MODELWare, Boolean>forTableColumn(
 						new BooleanStringConverter()));
-		
+		// sets what will happen, when a cellvalue is changed
 		tcartikel.setOnEditCommit((CellEditEvent<MODELWare, String> event) -> {
 			TablePosition<MODELWare, String> position = event.getTablePosition();
 			String newArtikelName = event.getNewValue();
@@ -109,14 +109,14 @@ public class CTRLTableController {
 	}
 	
 	/**
-	 * Sets the table parameter changable to true.
+	 * Sets the table parameter changeable to true.
 	 */
 	public static void setTableChangable() {
 		tbltable.setEditable(true);
 	}
 	
 	/**
-	 * Sets the table parameter changable to false.
+	 * Sets the table parameter changeable to false.
 	 */
 	public static void setTableNotChangable() {
 		tbltable.setEditable(false);

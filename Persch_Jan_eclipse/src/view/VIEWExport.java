@@ -13,7 +13,7 @@ import javafx.scene.text.TextAlignment;
 public class VIEWExport {
 
     /**
-     * Gets the box.
+     * Gets the VBox with the export button.
      *
      * @return the box
      */
@@ -29,7 +29,7 @@ public class VIEWExport {
     } 
     
     /**
-     * Gets the bottomBox .
+     * Gets the bottomBox with the descriptiontext.
      *
      * @return the bottomBox 
      */ 

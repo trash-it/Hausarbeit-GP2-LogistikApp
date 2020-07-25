@@ -12,7 +12,7 @@ import javafx.scene.text.TextAlignment;
 public class VIEWShowAll {
 	
     /**
-     * Gets the box.
+     * Gets the Vbox which includes the TableView.
      *
      * @return the box
      */
@@ -24,7 +24,7 @@ public class VIEWShowAll {
     }
 	
     /**
-     * Gets the bottomBox .
+     * Gets the bottomBox which the descriptiontext.
      *
      * @return the bottomBox 
      */ 

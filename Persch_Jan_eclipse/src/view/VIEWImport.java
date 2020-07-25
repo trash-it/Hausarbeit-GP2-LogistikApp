@@ -13,7 +13,7 @@ import javafx.scene.text.TextAlignment;
 public class VIEWImport {
 
     /**
-     * Gets the box.
+     * Gets the VBbox with the import button.
      *
      * @return the box
      */

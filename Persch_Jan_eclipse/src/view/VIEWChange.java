@@ -15,7 +15,7 @@ import javafx.scene.text.TextAlignment;
 public class VIEWChange {
 
     /**
-     * Gets the box.
+     * Gets the VBox which the TableView.
      *
      * @return the box
      */
@@ -27,7 +27,7 @@ public class VIEWChange {
     }
 
     /**
-     * Gets the bottomBox .
+     * Gets the bottomBox which includes the descriptionText.
      *
      * @return the bottomBox 
      */ 

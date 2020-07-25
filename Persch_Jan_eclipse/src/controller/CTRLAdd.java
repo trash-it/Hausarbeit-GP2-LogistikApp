@@ -7,7 +7,7 @@ import view.LagerProgrammStart;
 
 
 /**
- * The Class CTRL_Add.
+ * The Class CTRLAdd.
  *
  * @author  Jan Persch
  */

@@ -26,11 +26,9 @@ public class CTRLDelete {
 	    		if(nummer <= nummer2) {
 	    			LagerProgrammStart.getWarenliste().remove(nummer);
 	    			break;
+	    		}
 	    	}
-	    }
-	    
-	    
-	    	
+	
 		}
 	}
 }

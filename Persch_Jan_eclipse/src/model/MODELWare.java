@@ -5,7 +5,6 @@ package model;
 
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class MODEL_Ware.
  *
@@ -25,7 +24,7 @@ public class MODELWare implements Serializable {
     private boolean palette;
     
     /**
-     * Instantiates a new MODELWare.
+     * Instantiates a new MODELWareObject.
      *
      * @param name the name of the article
      * @param anzahl the anzahl of the article
@@ -50,18 +49,18 @@ public class MODELWare implements Serializable {
     }
     
     /**
-     * Gets the anzahl.
+     * Gets the amount.
      *
-     * @return the anzahl
+     * @return the amount
      */
     public int getAnzahl() {
         return anzahl;
     }
 	
     /**
-     * Gets the gewicht.
+     * Gets the weight.
      *
-     * @return the gewicht
+     * @return the weight
      */
     public double getGewicht() {
         return gewicht;
@@ -77,9 +76,9 @@ public class MODELWare implements Serializable {
     }
 
     /**
-     * Sets the artikel name.
+     * Sets the article name.
      *
-     * @param newArtikelName the new artikel name
+     * @param newArtikelName the new article name
      */
     public void setArtikelName(String newArtikelName) {
         name = newArtikelName;
@@ -95,18 +94,18 @@ public class MODELWare implements Serializable {
     }
 
     /**
-     * Sets the artikel anzahl.
+     * Sets the article amount.
      *
-     * @param newArtikelAnzahl the new artikel anzahl
+     * @param newArtikelAnzahl the new article amount.
      */
     public void setArtikelAnzahl(Integer newArtikelAnzahl) {
         anzahl = newArtikelAnzahl;
     }
 
     /**
-     * Sets the artikel gewicht.
+     * Sets the article weight.
      *
-     * @param newArtikelGewicht the new artikel gewicht
+     * @param newArtikelGewicht the new article weight.
      */
     public void setArtikelGewicht(double newArtikelGewicht) {
         gewicht = newArtikelGewicht;	

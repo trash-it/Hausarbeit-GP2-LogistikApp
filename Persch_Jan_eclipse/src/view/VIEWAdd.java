@@ -16,7 +16,7 @@ import javafx.scene.text.TextAlignment;
 public class VIEWAdd {
 
     /**
-     * Gets the box.
+     * Gets the VBox which all Textfields which describe an MODELWare Object.
      *
      * @return the box
      */
@@ -37,7 +37,7 @@ public class VIEWAdd {
         return vbox;
     }   
     /**
-     * Check checkbox.
+     * Check checkbox for the palette.
      *
      * @param cbpalette the cb palette
      * @return true, if successful
@@ -48,7 +48,7 @@ public class VIEWAdd {
 	
     
     /**
-     * Gets the bottomBox .
+     * Gets the bottomBox which descriptionText.
      *
      * @return the bottomBox 
      */ 

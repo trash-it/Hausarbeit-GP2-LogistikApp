@@ -19,7 +19,7 @@ import model.MODELWare;
 public class VIEWDelete {
 
     /**
-     * Gets the box.
+     * Gets the Vbox with the ListView.
      *
      * @return the box
      */
@@ -44,7 +44,7 @@ public class VIEWDelete {
     }
     
     /**
-     * Gets the bottomBox .
+     * Gets the bottomBox which contains the description.
      *
      * @return the bottomBox 
      */ 

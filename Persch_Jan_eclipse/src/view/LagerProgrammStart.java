@@ -35,13 +35,10 @@ public class LagerProgrammStart extends Application {
     static VBox boxbottom = new VBox();
     /** The status text. */
     static Text statusText = new Text();
-
     /** The data. */
     static ObservableList<MODELWare> data;
-	
     /** The p stage. */
     private static Stage pStage;
-
     /** The description text. */
     private static Text descriptionText = new Text();
 
@@ -123,7 +120,7 @@ public class LagerProgrammStart extends Application {
 	}
 
     /**
-     * Change center V box.
+     * Change center VBox.
      *
      * @param box the box
      */
@@ -158,7 +155,7 @@ public class LagerProgrammStart extends Application {
     }
 	
     /**
-     * Gets the warenliste.
+     * Gets the warenliste which includes all articles.
      *
      * @return the warenliste
      */
@@ -168,7 +165,7 @@ public class LagerProgrammStart extends Application {
 	
 	
     /**
-     * Adds the ware.
+     * Adds the an article to the warenliste.
      *
      * @param name the name
      * @param anzahl the anzahl

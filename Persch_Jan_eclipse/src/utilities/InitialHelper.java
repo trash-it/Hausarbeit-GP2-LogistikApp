@@ -4,7 +4,7 @@ import controller.CTRLTableController;
 import view.VIEWShowAll;
 
 /**
- * The Class initialHelper which prepares different stuff on the program start.
+ * The Class initialHelper which prepares different things on the program start.
  */
 public class InitialHelper {
 	
