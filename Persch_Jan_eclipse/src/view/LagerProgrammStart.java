@@ -58,7 +58,7 @@ public class LagerProgrammStart extends Application {
 	utilities.InitialHelper.createShowAllTable();
 	BorderPane root = new BorderPane();
 	BorderPane.setMargin(statusText, new Insets(10, 10, 10, 10));
-	        
+	    //create and set button positions    
         Button btn_showAll = new Button("Zeige Lagerbestand");
         Button btn_add = new Button("Einlagern");
         Button btn_change = new Button ("Ändere Artikel");
@@ -72,7 +72,7 @@ public class LagerProgrammStart extends Application {
         btn_delete.setPadding(new Insets(10,10,10,10));
         btn_exportToFile.setPadding(new Insets(10,10,10,10));
         btn_importFromFile.setPadding(new Insets(10,10,10,10));
-          
+        //set buttonfunctions  
         btn_showAll.setOnAction(e -> {String string = "showAll";
             CTRLButtonController.actionButton(string); changeRoot(root); }); 
         btn_add.setOnAction(e -> {String string = "add";
@@ -89,7 +89,7 @@ public class LagerProgrammStart extends Application {
         VBox box_left = new VBox();
         box_left.setAlignment(Pos.CENTER);
         box_left.setPrefWidth(150);
-           
+        //set button width with the width from the leftbox   
         btn_showAll.setMinWidth(box_left.getPrefWidth());
         btn_add.setMinWidth(box_left.getPrefWidth());
         btn_change.setMinWidth(box_left.getPrefWidth());
@@ -99,7 +99,7 @@ public class LagerProgrammStart extends Application {
         box_left.getChildren().addAll(btn_showAll, btn_add, btn_change, btn_delete,
                 btn_exportToFile, btn_importFromFile);
         root.setLeft(box_left);
-        
+        //set the logistic image to the box which will be added to the right pane
         Image image = new Image ("resources/lager.jpg");
         ImageView imgView = new ImageView(image);
         imgView.setImage(image);
@@ -133,9 +133,9 @@ public class LagerProgrammStart extends Application {
     }
 	
     /**
-     * Change status text.
+     * Change the status text.
      *
-     * @param text the text
+     * @param text the status text
      */
     public static void changeStatusText(Text text) {
         statusText = text;
@@ -144,7 +144,7 @@ public class LagerProgrammStart extends Application {
     /**
      * Change root.
      *
-     * @param root the root
+     * @param root the root Stage
      */
     private void changeRoot(BorderPane root) {
 	boxcenter.setAlignment(Pos.CENTER_LEFT);

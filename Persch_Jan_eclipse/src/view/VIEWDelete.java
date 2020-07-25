@@ -27,8 +27,10 @@ public class VIEWDelete {
         VBox vbox = new VBox();
         ListView<String> list = new ListView<>();
         ObservableList<String> items = FXCollections.observableArrayList();
-        for (MODELWare artikel: LagerProgrammStart.getWarenliste()) {
-            items.add(artikel.getName());
+        int i = 1;
+        for (MODELWare artikel: LagerProgrammStart.getWarenliste()) {     	
+            items.add(i + " " + artikel.getName());
+            ++i;
         }
         list.setItems(items);
 		
